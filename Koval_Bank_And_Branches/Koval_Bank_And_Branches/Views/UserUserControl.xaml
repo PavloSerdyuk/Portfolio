@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Koval_Bank_And_Branches.Views.UserUserControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:converter="clr-namespace:Koval_Bank_And_Branches.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Height="580" Width="1440">
+    <UserControl.Resources>
+        <converter:UserConverter x:Key="my:UserConverter" />
+    </UserControl.Resources>
+    <Grid Background="#FF2E2222">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Height="100" Margin="10" VerticalAlignment="Top" Width="509">
+            <Label Content="Users"/>
+            <Button VerticalAlignment="Top" Content="Change role&#xD;&#xA;" RenderTransformOrigin="0.499,0.903" Click="Button_Click"/>
+        </StackPanel>
+        <StackPanel  Margin="10,30">
+            <DataGrid ColumnWidth="0.25*" Name="dataGrid"
+                  ItemsSource="{Binding Path=Users}" BorderBrush="#FFAF6872" SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Path=Surname, Mode=TwoWay}"/>
+                    <DataGridTemplateColumn Header="Role">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="48" Height="48" Source="{Binding UserRole, 
+                                Converter={StaticResource my:UserConverter}, ConverterParameter=UserRole}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

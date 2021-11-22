@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Koval_Bank_And_Branches.Views.ContractUserControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Koval_Bank_And_Branches.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Background="#FF2E2222">
+        <StackPanel>
+            <Label Content="Contracts"/>
+        </StackPanel>
+        <StackPanel  Margin="10,30">
+            <DataGrid ItemsSource="{Binding Path=Contracts}" BorderBrush="#FFAF6872" Name="dataGrid" 
+                      SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="User Id" Binding="{Binding Path=UserId, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Manager Id" Binding="{Binding Path=ManagerId, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Created at" Binding="{Binding Path=CreatedAt, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Valid until" Binding="{Binding Path=ValidUntil, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Procent Increasement" Binding="{Binding Path=ProcentIncreasement, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="ValidUntil" Binding="{Binding Path=ContractType, Mode=TwoWay}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>
