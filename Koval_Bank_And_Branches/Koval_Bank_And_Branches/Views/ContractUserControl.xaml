@@ -12,7 +12,8 @@
             <Label Content="Contracts"/>
         </StackPanel>
         <StackPanel  Margin="10,30">
-            <DataGrid ItemsSource="{Binding Path=Contracts}" BorderBrush="#FFAF6872" Name="dataGrid">
+            <DataGrid ItemsSource="{Binding Path=Contracts}" BorderBrush="#FFAF6872" Name="dataGrid" 
+                      SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Path=Id, Mode=TwoWay}"/>
                     <DataGridTextColumn Header="User Id" Binding="{Binding Path=UserId, Mode=TwoWay}"/>

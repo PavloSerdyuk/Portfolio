@@ -48,6 +48,11 @@
                 Contracts
             </Button>
         </StackPanel>
+        <StackPanel Margin="10">
+            <Button HorizontalAlignment="Right"  Margin="10" Width="140" Command="{Binding BindDeleteItem}" CommandParameter="Contract">
+                Delete item
+            </Button>
+        </StackPanel>
         <StackPanel Grid.Row="1">
             <StackPanel.ContextMenu>
                 <ContextMenu>
