@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "76b4fe29-30cb-448e-8970-b53d570484bc",
+		"name": "NewsProgram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44392/api/news",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/api/news",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44392/api/news/26852b73-c100-4e5f-b5c8-7ff15830a80e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/api/news/26852b73-c100-4e5f-b5c8-7ff15830a80e",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news",
+						"26852b73-c100-4e5f-b5c8-7ff15830a80e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44392/api/news",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"articleTitle\": \"Culture\",\r\n    \"articleInfo\": \"Useful info\",\r\n    \"author_Name\": \"Arthur\",\r\n    \"author_Surname\": \"SurnameMovement\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/api/news",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44392/api/news/852b3328-5e9b-4b6a-80f1-2c70a37f7d7e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/api/news/852b3328-5e9b-4b6a-80f1-2c70a37f7d7e",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news",
+						"852b3328-5e9b-4b6a-80f1-2c70a37f7d7e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44392/api/news/d23b8e96-c957-464e-8ea9-29be7e9736ef",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"articleTitle\": \"Nature and other things\",\r\n        \"articleInfo\": \"Some new info was added\",\r\n        \"author_Name\": \"Andrii\",\r\n        \"author_Surname\": \"Fostiak\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/api/news/d23b8e96-c957-464e-8ea9-29be7e9736ef",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news",
+						"d23b8e96-c957-464e-8ea9-29be7e9736ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44392/api/news/1f690e55-c85b-463f-8e6b-9932e01decd0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/api/news/1f690e55-c85b-463f-8e6b-9932e01decd0",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"api",
+						"news",
+						"1f690e55-c85b-463f-8e6b-9932e01decd0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
