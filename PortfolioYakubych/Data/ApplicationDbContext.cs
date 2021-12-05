@@ -24,8 +24,18 @@ namespace PortfolioYakubych.Data
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
-			modelBuilder.Entity<BlogPost>().ToTable("BlogPost");
-			modelBuilder.Entity<Comment>().ToTable("Comment");
+			modelBuilder.Entity<BlogPost>().HasKey(l => l.Id);
+			modelBuilder.Entity<BlogPost>().Property(l => l.Title).HasMaxLength(120).IsRequired();
+			modelBuilder.Entity<BlogPost>().Property(l => l.Text).HasMaxLength(2048).IsRequired();
+			modelBuilder.Entity<BlogPost>().HasMany(l => l.Comments).WithOne(l => l.BlogPost).HasForeignKey(l => l.BlogPostId);
+			modelBuilder.Entity<BlogPost>().HasOne(l => l.Author).WithMany(l => l.BlogPosts);
+			modelBuilder.Entity<BlogPost>().ToTable("BlogPosts");
+
+
+			modelBuilder.Entity<Comment>().HasKey(l => l.Id);
+			modelBuilder.Entity<Comment>().Property(l => l.Text).HasMaxLength(200).IsRequired();
+			modelBuilder.Entity<Comment>().HasOne(l => l.Author).WithMany(l => l.Comments);
+			modelBuilder.Entity<Comment>().ToTable("Comments");
 		}
 	}
 }

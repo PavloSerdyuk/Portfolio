@@ -8,11 +8,11 @@ namespace PortfolioYakubych.Models
 {
 	public class Comment
 	{
-		public Guid Id { get; set; }
-		[Required]
-		[MaxLength(250)]
+		public int Id { get; set; }
 		public string Text { get; set; }
 		
+		public int BlogPostId { get; set; }
+		public BlogPost BlogPost { get; set; }
 		public ApplicationUser Author { get; set; }
 
 	}
