@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+</br>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-success">
+        <a class="link-success" href="/project/projectstable">
+            Projects
+        </a>
+    </div>
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-danger">Login to have an access to projects</div>
+}
